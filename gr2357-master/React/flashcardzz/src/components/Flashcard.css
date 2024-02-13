@@ -1,0 +1,106 @@
+/* Styling for the flashcard page layout */
+.flashcard-page {
+  display: flex;
+  flex-direction: column; /* Elements are stacked vertically */
+  justify-content: center; /* Content is centered vertically within the page */
+  align-items: center; /* Content is centered horizontally within the page */
+  min-height: 100vh; /* Minimum height is set to the full viewport height */
+  background-color: gainsboro; /* Light gray background color */
+}
+
+/* Container for the flashcard, centered within the parent */
+.flashcard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -250px; /* Adjusted margin for specific horizontal alignment */
+}
+
+/* Style for the individual flashcard */
+.flashcard {
+  perspective: 1000px; /* Perspective depth for 3D effect */
+  width: 300px; /* Width of the flashcard */
+  height: 200px; /* Height of the flashcard */
+  cursor: pointer; /* Cursor changes to pointer to indicate interactivity */
+}
+
+/* Style for the title element */
+.title {
+  padding-bottom: 50px;
+  padding-right: 150px;
+}
+
+/* Base style for a card, including the flip transition */
+.card {
+  transition: transform 0.1s; /* Smooth transition for flipping effect */
+  transform-style: preserve-3d; /* Preserves 3D aspects during transformation */
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Style for the card in its flipped state */
+.card.flipped {
+  transform: rotateX(180deg); /* Rotation around the X-axis for flip effect */
+}
+
+/* Style for the home button */
+.home-button {
+  align-items: flex-start;
+  margin: 10px;
+  margin-right: 1200px; /* Large right margin */
+  margin-top: -50px; /* Negative top margin for positioning */
+}
+/* Styles for the front and back sides of the card */
+.card-front,
+.card-back {
+  backface-visibility: hidden; /* Hides the back face of the card when flipped */
+  position: absolute;
+  width: 100vh;
+  height: 100%;
+  border-radius: 10px; /* Rounded corners for aesthetic appeal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth and 3D effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em; /* Font size for readability */
+  padding: 20px; /* Padding inside the card */
+}
+/* Specific style for the front of the card */
+.card-front {
+  background-color: #007bff; /* Blue background for the front side */
+  color: white; /* White text color */
+}
+
+/* Specific style for the back of the card */
+.card-back {
+  background-color: #ed3434; /* Red background for the back side */
+  color: white; /* White text color */
+  transform: rotateX(180deg); /* Initial rotation for the back side */
+}
+
+/* Style for navigation buttons */
+.nav-button {
+  background-color: #007bff; /* Blue background color for buttons */
+  color: white; /* White text color */
+  border: none;
+  padding: 10px 20px; /* Padding around the text */
+  margin: 0 10px; /* Margin between buttons */
+  font-size: 1em; /* Standard font size */
+  cursor: pointer; /* Cursor change to indicate button */
+  border-radius: 5px; /* Rounded corners for buttons */
+  display: inline-block; /* Inline display for buttons */
+}
+
+/* Container for navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center; /* Horizontal center alignment of buttons */
+  margin-top: 50px; /* Top margin for spacing */
+  margin-left: -250px; /* Adjusted left margin for positioning */
+}
+
+/* Hover effect for navigation buttons */
+.nav-button:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}

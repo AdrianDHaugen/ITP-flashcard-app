@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxui.AppController">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <StackPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <FlowPane alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label text="Card Manager">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Label>
+                  <ListView fx:id="listViewCards" prefHeight="200.0" prefWidth="200.0">
+                     <FlowPane.margin>
+                        <Insets bottom="10.0" />
+                     </FlowPane.margin>
+                  </ListView>
+                  <HBox>
+                     <Button fx:id="buttonAddCard" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#onAddCardPressed" text="+" />
+                     <Button fx:id="buttonSwapToCardDeck" alignment="CENTER" focusTraversable="false" mnemonicParsing="false" onAction="#onSwapToCardDeckPressed" text="Card Inspector -&gt;" />
+                  </HBox>
+               </children>
+            </FlowPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </StackPane>
+   </children>
+</GridPane>

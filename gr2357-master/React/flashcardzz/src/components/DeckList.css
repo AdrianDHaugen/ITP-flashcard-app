@@ -1,0 +1,43 @@
+/* Styles for individual deck items */
+.deck-item {
+  padding: 10px 15px; /* Padding around the content */
+  margin: 5px 0; /* Vertical margin */
+  cursor: pointer; /* Indicates the item is clickable */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions for hover and click effects */
+
+  /* Hover state styles */
+  &:hover {
+    background-color: #e0e0e0; /* Darker background on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for an elevated effect */
+    color: #333; /* Darker text color */
+  }
+
+  /* Active (clicked) state styles */
+  &:active {
+    transform: scale(0.98); /* Slightly scale down when clicked */
+  }
+
+  /* After pseudo-element for a decorative bar */
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: black; /*Black bar at the bottom */
+  }
+}
+
+/* Style for the arrow icon */
+.deck-arrow {
+  float: right; /* Positions the arrow to the right */
+  padding-left: 10px; /* Adds space to the left of the arrow */
+}
+
+/* Style for a selected deck item */
+.selected {
+  border: 2px solid blue; /* Highlight with a blue border */
+}

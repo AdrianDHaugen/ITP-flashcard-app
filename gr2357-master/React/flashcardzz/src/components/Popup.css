@@ -1,0 +1,74 @@
+/* Style for the backdrop of the popup, covering the entire screen */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures it appears above other content */
+}
+
+/* Style for the popup box */
+.popup-inner {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+  width: 80%;
+  max-width: 120vh; /* Maximum width to maintain responsiveness */
+}
+
+/* Style for input fields and textareas inside the popup */
+.popup-inner input,
+.popup-inner textarea {
+  width: 100%; /* Full width of the container */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Border and padding included in width */
+  resize: none; /* Prevent resizing of textarea */
+}
+
+/* Specific style for the textarea to increase its height */
+.popup-inner textarea {
+  height: 200px;
+}
+
+
+/* Style for the title inside the popup */
+.popup-inner h3 {
+  text-align: center;
+  color: #333;
+}
+
+/* General button styling within the popup, including center alignment */
+.popup-inner button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 10px 20px 0;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block; /* Aligns buttons side by side */
+  text-align: center; /* Center-align text in buttons */
+}
+
+/* Specific style for the last button, typically the cancel button */
+.popup-inner button:last-child {
+  background-color: #6c757d;
+}
+
+/* Hover effect for buttons to indicate interactivity */
+.popup-inner button:hover {
+  opacity: 0.9;
+}
+
+/* Center-aligning content in the popup */
+.popup-inner {
+  text-align: center;
+}

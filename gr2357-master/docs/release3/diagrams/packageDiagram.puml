@@ -1,0 +1,36 @@
+@startuml
+
+component core {
+    package ".core"
+    package ".json"
+}
+
+component rest {
+package restapi 
+package restserver
+}
+
+component React {
+    
+}
+
+component fxui {
+    package ".fxui"
+}
+
+component SpringBoot {
+    component jetty
+}
+
+fxui ..> [fxml]
+fxui ..> [javafx]
+.fxui ..> .core
+.fxui ..> restserver
+restapi <..> restserver
+restapi ..> .core
+.json ..> [jackson]
+.core <..> .json
+rest ..> jetty
+React ..> restserver
+
+@enduml

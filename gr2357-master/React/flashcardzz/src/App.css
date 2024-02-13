@@ -1,0 +1,43 @@
+/* Styling for the main container of the application */
+.app-container {
+  display: flex;
+  padding: 100px;
+  gap: 2vh;
+  font-family: Arial, sans-serif;
+  background-color: gainsboro;
+}
+
+/* Styling for heading level 2 (h2) elements */
+h2 {
+  border-bottom: 2px solid black; /* Adds a solid black border at the bottom of h2 elements */
+  padding-bottom: 5px; /* Adds padding at the bottom of h2 elements */
+}
+
+/* Styling for deck-list, card-list, and popup elements */
+.deck-list,
+.card-list,
+.popup {
+  flex: 1; /* Makes these elements flex containers with equal flex size */
+  padding: 10px; /* Adds padding inside these elements */
+  border: 1px solid black; /* Adds a solid black border around these elements */
+  border-radius: 5px; /* Rounds the corners with a 5px radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow effect with specified parameters */
+  background-color: white; /* Sets the background color to white */
+}
+
+/* Styling for buttons */
+button {
+  margin-right: 10px; /* Adds right margin to buttons */
+  padding: 5px 10px; /* Adds padding inside buttons */
+  border-radius: 5px; /* Rounds the corners with a 5px radius */
+  border: none; /* Removes the button border */
+  background-color: #007bff; /* Sets the background color to blue */
+  color: #fff; /* Sets the text color to white */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s ease; /* Adds a smooth transition effect for background color changes */
+}
+
+/* Styling for buttons on hover */
+button:hover {
+  background-color: #0056b3; /* Changes the background color to a darker blue on hover */
+}

@@ -1,0 +1,16 @@
+@startuml
+package "Persistence" {
+  savefile.json - [FileHandler]
+}
+
+package "Core" {
+  [Context] -> FileHandler: use
+  [Core classes] - Context
+}
+
+package "Fxui" {
+  [Controllers] -> Context: use
+}
+
+[javafx] - [Controllers]
+@enduml

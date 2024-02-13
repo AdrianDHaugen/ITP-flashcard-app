@@ -1,0 +1,82 @@
+@startuml
+
+actor user
+participant "~#SubmitNewCardButton: Button" as AddCardButton #LightBlue
+participant "AddCardPopup.js" as popup #LightBlue
+participant "Home.js" as home #LightBlue
+participant "axiosConfig.js" as axios #LightBlue
+participant restserver #LightCoral
+participant "FlashCardController" as controller #LightCoral
+participant "FlashCardService" as service #LightCoral
+participant Card #LightYellow
+participant Context #LightYellow
+participant Deck #LightYellow
+participant JsonHandler #Yellow
+participant FileHandler #Yellow
+
+user -> AddCardButton : click
+AddCardButton -> popup : handleSubmit
+popup -> home : onConfirm
+home -> home : handleAddCard
+
+home -> axios : createCard
+axios -> restserver : post
+activate restserver
+
+restserver -> controller : addcardToDeck
+activate controller
+
+controller -> Card : new
+Card --> controller
+controller -> service : addCardToDeck
+activate service
+
+service -> service : getDeckByName
+service -> Context : getDecks
+Context --> service
+service -> Deck : addCard
+service -> service : autoSaveModel
+
+service -> Context : saveDeck
+Context -> JsonHandler : serializeDecks
+JsonHandler --> Context
+Context -> FileHandler : writeToFile
+
+service --> controller
+deactivate service
+
+controller --> restserver
+deactivate controller
+
+restserver --> axios
+deactivate restserver
+
+axios --> home
+
+home -> home : setCards
+home -> home : setShowAddCardPopup
+home -> home : fetchCards
+home -> axios : getDecks
+axios -> restserver : get
+activate restserver
+
+restserver -> controller : getDecks
+activate controller
+
+controller -> service : getAllDecks
+activate service
+
+service -> Context : getDecks
+Context --> service
+service --> controller
+deactivate service
+
+controller --> restserver
+deactivate controller
+
+restserver --> axios
+deactivate restserver
+
+axios --> home
+
+@enduml

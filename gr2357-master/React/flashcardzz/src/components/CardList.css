@@ -1,0 +1,42 @@
+/* Style for individual cards, making them appear clickable */
+.clickable-card {
+  padding: 10px;
+  border: 1px solid #ddd; /* Light grey border */
+  margin-top: 5px;
+  border-radius: 5px; /* Rounded corners for aesthetics */
+  cursor: pointer; /* Changes cursor to indicate clickability */
+  transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+  margin-bottom: 1vh; /* Vertical margin based on viewport height */
+}
+
+/* Hover effect for clickable cards */
+.clickable-card:hover {
+  background-color: #f5f5f5; /* Slight change in background color on hover */
+}
+
+/* Container for the list of cards */
+.card-list-container {
+  display: flex;
+  flex-direction: column; /* Stacks children vertically */
+  height: 100%;
+  padding: 10px; /* Padding around the entire container */
+}
+
+/* Wrapper for cards, allowing for scrollable content */
+.cards-wrapper {
+  flex: 1; /* Occupies the available space */
+  overflow-y: auto; /* Enables vertical scrolling if content overflows */
+}
+
+/* Style for action buttons within a card */
+.card-actions {
+  display: flex;
+  justify-content: space-between; /* Distributes buttons evenly across the space */
+  padding-top: 1vh; /* Top padding based on viewport height */
+  margin-top: 1vh; /* Top margin based on viewport height */
+}
+
+/* Style for highlighting a selected card */
+.selected {
+  border: 2px solid blue; /* Thicker blue border for selected cards */
+}

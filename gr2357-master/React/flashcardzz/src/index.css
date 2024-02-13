@@ -1,0 +1,16 @@
+/* Global body styles */
+body {
+  background-color: gainsboro; /* Sets a light gray background for the entire page */
+  margin: 0; /* Removes default margin to prevent unexpected spacing */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; /* Sets a prioritized list of fonts for text */
+  -webkit-font-smoothing: antialiased; /* Improves text rendering in WebKit browsers (like Safari and Chrome) */
+  -moz-osx-font-smoothing: grayscale; /* Enhances font smoothing on macOS Firefox */
+}
+
+/* Styles specifically for elements rendered in code font */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace; /* Specifies a list of monospace fonts for code elements */
+}

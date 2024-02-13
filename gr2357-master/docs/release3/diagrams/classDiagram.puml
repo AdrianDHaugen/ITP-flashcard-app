@@ -1,0 +1,60 @@
+@startuml
+
+package "core" #9ED1F7{
+class Card {
+    - String front
+    - String back
+}
+
+class Context {
+    {static} - Context instance
+    {static} + void reset()
+    + void loadDeck()
+    + void saveDeck()
+}
+
+class Deck {
+    - String name
+    - int currentCardIndex
+    {static} + Card END_OF_DECK_CARD
+    + void flipCard()
+    + void toggleCardSide()
+    + void resetCardSide()
+    + void goToNextCard()
+    + void goToPreviousCard()
+}
+
+enum CardSide {
+    FRONT
+    BACK
+}
+
+}
+
+package json #2A74F7{
+class FileHandler {
+    - Path saveFilePath
+    + void setSaveFile(String)
+    + void writeToFile(String)
+    + String loadSaveFile()
+}
+
+class JsonHandler {
+    {static} + ArrayList<Deck> deserializeDeck(String)
+    {static} + String serializeDecks(ArrayList<Deck>)
+}
+}
+
+Deck --> "cardDeck:*" Card
+Deck --> "cardSide:1\n currentCardSide:1" CardSide
+Context --> "decks:*\n currentDeck:1" Deck
+
+
+Context ..> FileHandler
+Context ..> JsonHandler
+JsonHandler ..> Deck
+JsonHandler ..> Card
+
+
+
+@enduml
